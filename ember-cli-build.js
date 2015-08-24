@@ -5,6 +5,9 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
   });
+    app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+    app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
@@ -18,6 +21,16 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
+    var mergeTrees = require('broccoli-merge-trees');
+    var pickFiles = require('broccoli-static-compiler');
+    var extraAssets = pickFiles('vendor/bootstrap/dist/fonts',{
+        srcDir: '/',
+        files: ['**/*'],
+        destDir: '/fonts'
+    });
+
+    module.exports = mergeTrees([app.toTree(), extraAssets]);
+
 
   return app.toTree();
 };
