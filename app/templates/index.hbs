@@ -1,6 +1,14 @@
 <div class="row well">
   <div class="col-lg-2">
-    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur.
+    <ul class='list-group'>
+      {{#each user in model}}
+        <li class="list-group-item">
+          <div class="user--login">
+            {{user.login}}
+          </div>
+      </li>
+      {{/each}}
+    </ul>
   </div>
 
   <div class="col-lg-10">
