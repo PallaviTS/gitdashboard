@@ -1,0 +1,22 @@
+<div class="row well">
+  <div class="col-lg-2">
+    <ul class='list-group'>
+      {{#each model as |user|}}
+      <li class="list-group-item">
+        <div class="user--login">
+          {{#link-to 'users' user.login}}
+          <span>
+            {{user.login}}
+          </span>
+          {{/link-to}}
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="col-lg-10">
+    {{outlet}}
+  </div>
+
+</div>
