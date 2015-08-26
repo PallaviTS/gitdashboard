@@ -1,9 +1,20 @@
+{{! {{column-chart chartId='revenue-by-product'}\} }}
 <div class="user--details">
-  {{model.login}}
+  <div class="users--repos">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        {{#link-to 'repos'}}
+          Repos
+        {{/link-to}}
+      </li>
+      <li><a href="#"> Followers</a></li>
+      <li><a href="#"> Contributions</a></li>
+      <li><a href="#"> Activity Logs</a></li>
+    </ul>
+  </div>
   <br/>
-  {{model.avatar_url}}
-  <br/>
-  {{model.blog}}
-  <br/>
-  {{model.followers_url}}
+</div>
+
+<div class="well">
+  {{outlet}}
 </div>
