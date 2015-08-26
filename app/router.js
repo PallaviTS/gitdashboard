@@ -9,6 +9,7 @@ Router.map(function() {
   this.resource('/users', function(){
       this.resource('users', { path: '/:login'}, function(){
           this.resource('repos');
+          this.resource('followers');
       });
   });
 });
