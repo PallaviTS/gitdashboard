@@ -1,6 +1,9 @@
+{{pie-chart chartId='revenue-by-product' data=repoData}}
 <div class="user--repos__details">
-  repos template
-  {{#each model as |repo|}}
-    {{repo.name}}
+  Total repos{{model.length}}
+  {{#each model as |repo_details|}}
+  <ul>
+    {{partial 'repos/details' repo_details }}
+  </ul>
   {{/each}}
 </div>
